@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.56.3" />
+
+
+<title>Ferris State University Exposure From Athletics - A Hugo website</title>
+<meta property="og:title" content="Ferris State University Exposure From Athletics - A Hugo website">
+
+
+  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://github.com/rstudio/blogdown">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/rstudio">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">6 min read</span>
+    
+
+    <h1 class="article-title">Ferris State University Exposure From Athletics</h1>
+
+    
+    <span class="article-date">2019-08-01</span>
+    
+
+    <div class="article-content">
+      
+
+
+<p><strong>Disclaimer</strong>
+In this article I focus on the three biggest sports at Ferris State University, this is not to diminish the impact of the other athletic programs, as I think they are all great contributors to the University. Some of the best Student-Athletes come from the other sports, some very intelligent individuals who have gone on to do amazing things and will continue to do amazing things.</p>
+<p>The data that I use in this article is only reflective of one media channel - google. However I think that google searches serve as a great proxy for general media exposure in all media channels (news,television,radio,etc..)</p>
+<p><strong>Google Searches of Ferris State University Compared to searches of Ferris Sports</strong></p>
+<p>Black Line - Google Searches for “Ferris State University”</p>
+<p>Red Line - Searches for “Ferris State Football”</p>
+<p>Green Line - Searches for “Ferris State Hockey”</p>
+<p>Blue Line - Searches for “Ferris State Basketball”</p>
+<p><img src="/post/2019-08-01-Ferris-state-athletics_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+<strong>What is this relative Volume:</strong>
+This data was Pulled from Google Trends it is relatively easy and they will graph it for you also. The relative volume is a metric that measures volume relative to the highest it has ever been.</p>
+<p>In early 2012, searches for Ferris State University were higher than they have been since, and most likely ever before. This set the relative max and all of the other data points are based off of that maximum. During the same time Ferris State Hockey was around 22, this means that “Ferris State Hockey” searches were around 1/5 as common as “Ferris State University” searches.</p>
+<p><strong>Specific Dates of Interest</strong></p>
+<p><strong>Hockey:</strong>
+Some specific points to notice are that first spike in early 2012 is when the Ferris State Hockey team made the Frozen Four which is the Final Four in Collegiate Hockey, they are the only division one sport at Ferris and while Hockey is not usally a lucrative sport, it is very popular at Ferris State. You can see similar bumps in 2014 and 2016 but just smaller, the team made the final eight each of these years.</p>
+<p><strong>Basketball:</strong>
+Ferris state Basketball won a National Championship in April 2018 and you can see the volume of searches for both them and the University as a whole Spiked significantly.</p>
+<p><strong>Football:</strong>
+Ferris State Football went to a National Championship and lost in December of 2018 and you can see a similar spike for them and the university during this time period. You can also see when the Football teams increased recent success there has been a general trend upward each fall.</p>
+<p><strong>Cyclical Pattern:</strong>
+You can also see the year to year pattern that develops for google searches. Every year starting in 2012 the Football team began to grow in popularity during football months, and during the winter and spring Hockey and Basketball would provide a boost to the overall searches for the university.</p>
+<p><strong>In the Graph Below I predict the Volume of searches for the University based off the searches for each sport</strong></p>
+<p><img src="/post/2019-08-01-Ferris-state-athletics_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><strong>Nerd Stuff:</strong>
+The main takeaway from this output below is the R-squared Value, what this basically means is how much variance is explained by the predictors included.</p>
+<p>This essientially means I could tell you how often Ferris State University is being googled by knowing the google rates of each of the individual sports, with a 79% accuracy.</p>
+<p><strong><em>Another way of putting this is these three sports are responsible for roughly 80% of Ferris State’s Online Traffic</em></strong></p>
+<pre><code>## 
+## Call:
+## lm(formula = Ferris_State_University ~ Ferris_State_Football + 
+##     Ferris_State_Basketball + Ferris_State_Hockey, data = df)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -13.4567  -3.8449  -0.9297   3.3710  12.7385 
+## 
+## Coefficients:
+##                         Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)              27.6963     0.8063  34.348  &lt; 2e-16 ***
+## Ferris_State_Football     1.2826     0.1184  10.832  &lt; 2e-16 ***
+## Ferris_State_Basketball   0.9699     0.2497   3.885 0.000199 ***
+## Ferris_State_Hockey       2.9508     0.2087  14.139  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 5.574 on 87 degrees of freedom
+## Multiple R-squared:  0.7964, Adjusted R-squared:  0.7894 
+## F-statistic: 113.4 on 3 and 87 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p><strong>In the Graph Below I predict the Volume of searches for the University based off the searches for each sport and the Pattern that has begin to develop over time</strong></p>
+<p><img src="/post/2019-08-01-Ferris-state-athletics_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><strong>Using time and Sports Online Traffic I can predict the University google searches with 87% accuracy</strong></p>
+<pre><code>## 
+## Call:
+## lm(formula = Ferris_State_University ~ Ferris_State_Football + 
+##     Ferris_State_Basketball + Ferris_State_Hockey + MonthNumber, 
+##     data = df)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -12.1515  -3.0577   0.0068   3.0365  11.6113 
+## 
+## Coefficients:
+##                         Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)             47.28162    2.97572  15.889  &lt; 2e-16 ***
+## Ferris_State_Football    1.44100    0.09912  14.538  &lt; 2e-16 ***
+## Ferris_State_Basketball  1.29775    0.20879   6.216 1.77e-08 ***
+## Ferris_State_Hockey      2.50548    0.18211  13.758  &lt; 2e-16 ***
+## MonthNumber             -0.13759    0.02039  -6.748 1.66e-09 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 4.533 on 86 degrees of freedom
+## Multiple R-squared:  0.8669, Adjusted R-squared:  0.8607 
+## F-statistic:   140 on 4 and 86 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p><strong>Predicting what the Data would Look like with the effect of Sports Removed</strong>
+If I remove the “Ferris State University” googles that were explained by the prominence of the sports teams here is what we are left with, now to be clear I don’t believe that if sports didn’t exist the google searches would drop to zero, but other than the peaks that are provided by sports the overall search volume for the university is definitely trending down.</p>
+<p><img src="/post/2019-08-01-Ferris-state-athletics_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><strong>So what is this worth?</strong></p>
+<p><strong>Similar Work that has been Done:</strong>
+<a href="http://footballscoop.com/news/western-michigan-says-2016-football-season-worth-69-million-media-exposure/" class="uri">http://footballscoop.com/news/western-michigan-says-2016-football-season-worth-69-million-media-exposure/</a>.
+This is comparing a bit of apples to oranges here but in 2016 it was estimated by a consulting firm in Ann Arbor that the 2016 Western Michigan Football season had earned the university an estimated 69 million dollars in media exposure.
+At Ferris State we are talking about a Division 2 Program not a Division 1 Program, but other than that you have some similar variables. Geographically Ferris State and Western Michigan are about an hour and 15 minutes away. These are both mid sized schools Ferris State being about 60% of the enrollment size of Western Michigan 14,000 compared to 24,000.</p>
+<p>I think when we are talking about any of these teams and their potential monetary impact via exposure through any medium we are talking about a number that is a fraction of this. But let’s say if you combine all athletics then it’s a tenth or a 20th of the Western Michigan Number, I bet that Ferris State Leadership doesn’t realize that their sports teams have the ability to pull in 3 to 6 million dollars a year in advertisement and marketing, now these are not hard numbers but I susepect they might be even higher, the reality is: these teams have the ability to bring in eyes that you can’t bring in any other way, no amount of TV commercials, Billboards will amount to the exposure from successful athletics.</p>
+<p><strong><em>“Exposure that they quite literally could not buy”(excerpt from article above)</em></strong></p>
+<p><strong>Call to Action to the University Athletics are your biggest marketing, promotional, advertisement tool, treat them as such.</strong></p>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+
+    
+  </body>
+</html>
+
